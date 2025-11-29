@@ -20,4 +20,5 @@ Different possibilities for the Data Structure
 Intro:
 
     Working with a data multiset to create the basis to store something viable for a game, I chose to work with 
-the idea of a real time strategy game (RTS). 
+the idea of a real time strategy game (RTS).  I want to keep ary unit maintenance inside a HashTable<string, 
+unsigned int>.
