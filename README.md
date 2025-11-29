@@ -11,3 +11,13 @@ RTS Army build
     pros can set army cap; limited types of troops; not given as a specific type
         on the pdf, may be more unique
     cons not given as a specific type on the pdf, may be more unique
+
+Different possibilities for the Data Structure
+    Sequence: more or less a linked list: each change will have to iterate through the array to edit the appropriate one
+    Hash table: unique ID per unit can limit size to total possible Unit count
+    AVLTree cannot be a binary search tree in this instance easily; not the best to do
+
+Intro:
+
+    Working with a data multiset to create the basis to store something viable for a game, I chose to work with 
+the idea of a real time strategy game (RTS). 
