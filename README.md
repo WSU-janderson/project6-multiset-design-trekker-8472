@@ -26,3 +26,7 @@ damage taken, health points, cost to build, and unit value (e.g. a Marine may be
 As units are damaged and killed I need them removed from the table. I need to implement this for the production company
 RipRTSOff so that the program can manage its units inside the game environment for an end user gamer. 
 
+Core Operations:
+
+The core operations of this bag should work as follows (somewhat previously explained): damage progression/ability, unit
+cost (both monetary and time), unit army value, total army count.
