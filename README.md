@@ -19,6 +19,9 @@ Different possibilities for the Data Structure
 
 Intro:
 
-    Working with a data multiset to create the basis to store something viable for a game, I chose to work with 
-the idea of a real time strategy game (RTS).  I want to keep ary unit maintenance inside a HashTable<string, 
-unsigned int>.
+Working with a data multiset to create the basis to store something viable for a game, I chose to work with 
+the idea of a real time strategy game (RTS).  I want to keep army unit maintenance inside a HashTable<string, 
+unsigned int>. For this project I will need the system to be able to flexibly alter unit status to include upgrades, 
+damage taken, health points, cost to build, and unit value (e.g. a Marine may be worth one while a Tank can be worth 6.) 
+As units are damaged and killed I need them removed from the table. I need to implement this for the production company
+RipRTSOff so that the program can manage its units inside the game environment for an end user gamer.
