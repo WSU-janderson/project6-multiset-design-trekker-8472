@@ -30,7 +30,9 @@ Core Operations:
 
 The core operations of this bag should work as follows (somewhat previously explained): damage progression/ability, unit
 cost (both monetary and time), unit army value, total army count, and unit position. This will likely need to be a 
-hashtable of hashtables. Most operations should be O(1) as one can, for example, first determine the type of unit to be 
+hashtable of hashtables. Most operations should be O(1) as one can, " The indexes of the array are computed using a hash
+function. hash table structures have a remarkable property: most of their operations are (amortized, average, etc.) 
+constant time, that is, their theoretical complexity is 𝒪(1)."[1] For example, first determine the type of unit to be 
 attacked, like a tank. Then, from that hashtable find the specific ID of the one being attacked and alter the unit as 
 needed. Problems may occur when 8 units attack at the same time one unit and do way more damage than the total health 
 of the unit being attacked. Also, the unit could already be dead when the damage vector is on route. However, there is 
