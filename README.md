@@ -29,4 +29,10 @@ RipRTSOff so that the program can manage its units inside the game environment f
 Core Operations:
 
 The core operations of this bag should work as follows (somewhat previously explained): damage progression/ability, unit
-cost (both monetary and time), unit army value, total army count.
+cost (both monetary and time), unit army value, total army count, and unit position. This will likely need to be a 
+hashtable of hashtables. Most operations should be O(1) as one can, for example, first determine the type of unit to be 
+attacked, like a tank. Then, from that hashtable find the specific ID of the one being attacked and alter the unit as 
+needed. Problems may occur when 8 units attack at the same time one unit and do way more damage than the total health 
+of the unit being attacked. Also, the unit could already be dead when the damage vector is on route. However, there is 
+one factor that will be O(N), that is the total army count (if counting the whole army each time.) this can be mitigated
+with a increment/decrement upon each unit creation and deletion.
