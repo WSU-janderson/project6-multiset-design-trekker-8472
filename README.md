@@ -36,3 +36,11 @@ needed. Problems may occur when 8 units attack at the same time one unit and do 
 of the unit being attacked. Also, the unit could already be dead when the damage vector is on route. However, there is 
 one factor that will be O(N), that is the total army count (if counting the whole army each time.) this can be mitigated
 with a increment/decrement upon each unit creation and deletion.
+
+Set Operations:
+
+There are several different set operations that may be of use. For example in many games one can creat specific subsets 
+of units in one's army. Also, to compare different strengths, one must also be able to compare where the army's 
+intersect and where they have difference It is also useful to determine what upgrades one army may have that the other
+does not. For example if there is a scenario where the enemy is supposed to achieve final victory no matter what the 
+player does, the difference one will reveal weaknesses for further unit generation to wipe out the player.
