@@ -20,7 +20,7 @@ Different possibilities for the Data Structure
 Intro & Philosophy:
 
 Working with a data multiset to create the basis to store something viable for a game, I chose to work with 
-the idea of a real time strategy game (RTS).  I want to keep army unit maintenance inside a HashTable<string, 
+the idea of a real time strategy game (RTS).  I want to keep army unit maintenance inside a hash table<string, 
 unsigned int>. For this project, I will need the system to be able to flexibly alter unit status to include upgrades, 
 damage taken, health points, cost to build, and unit value (e.g. a Marine may be worth one while a Tank can be worth 6.) 
 As units are damaged and killed I need them removed from the table. I need to implement this for the production company
@@ -30,10 +30,10 @@ Core Operations:
 
 The core operations of this bag should work as follows (somewhat previously explained): damage progression/ability, unit
 cost (both monetary and time), unit army value, total army count, and unit position. This will likely need to be a 
-hashtable of hashtables. Most operations should be O(1) as one can, " The indexes of the array are computed using a hash
+hash table of hash tables. Most operations should be O(1) as one can, " The indexes of the array are computed using a hash
 function. hash table structures have a remarkable property: most of their operations are (amortized, average, etc.) 
 constant time, that is, their theoretical complexity is 𝒪(1)."[1] For example, first determine the type of unit to be 
-attacked, like a tank. Then, from that hashtable find the specific ID of the one being attacked and alter the unit as 
+attacked, like a tank. Then, from that hash table find the specific ID of the one being attacked and alter the unit as 
 needed. Problems may occur when 8 units attack at the same time one unit and do way more damage than the total health 
 of the unit being attacked. Also, the unit could already be dead when the damage vector is on route. However, there is 
 one factor that will be O(N), that is the total army count (if counting the whole army each time.) this can be mitigated
@@ -46,3 +46,16 @@ of units in one's army. Also, to compare different strengths, one must also be a
 intersect and where they have difference It is also useful to determine what upgrades one army may have that the other
 does not. For example if there is a scenario where the enemy is supposed to achieve final victory no matter what the 
 player does, the difference one will reveal weaknesses for further unit generation to wipe out the player.
+
+Extension Feature:
+    Using one unit and another with the addition of an appropriate amount of time, there can be two separate units that 
+merge into a single better unit. For example, if the player has a marine and robotic "AI" armor, the two units could 
+merge to form the "starship trooper ape unit or at least a differently named facsimile of one. With this action, it 
+gives another avenue for the player to progress in power without the creation of new units when unit capped for total 
+supply. With the addition of more types of armies, this ability can be added in different versions to each. For example,
+one could be available early in the game to an army, but it would not have as much added strength as that for the 
+army(ies) that have to wait longer to gain the ability.
+
+
+[1] J. G. D. P. B. da Fonseca and A. C. F. F. P. N. D. E. P. A. N. da Silva, "Key Concepts, Weakness and Benchmark on 
+Hash Table Data Structures," Algorithms, vol. 15, no. 3, p. 100, Mar. 2022.
