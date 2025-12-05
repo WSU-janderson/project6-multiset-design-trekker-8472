@@ -1,23 +1,9 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/fGHNCM3V)
-# Project 6 - MultiSet Design
+---
+header-includes:
+  - \usepackage{float}
+---
 
-The project descriptinon is in the [PDF](MultiSet_Fall25.pdf) located in this repo.
-
-You will need to add any and all files you use for this project into this repository.
-
-Remember to commit your changes regularly, just like you would with a programming assignment.
-
-RTS Army build
-    pros can set army cap; limited types of troops; not given as a specific type
-        on the pdf, may be more unique
-    cons not given as a specific type on the pdf, may be more unique
-
-Different possibilities for the Data Structure
-    Sequence: more or less a linked list: each change will have to iterate through the array to edit the appropriate one
-    Hash table: unique ID per unit can limit size to total possible Unit count
-    AVLTree cannot be a binary search tree in this instance easily; not the best to do
-
-<h1 align="center">Using Hash Tables to run (an) Army(ies) for Real Time Strategy</h1>
+# Using Hash Tables to run (an) Army(ies) for Real Time Strategy
 
 ## Intro & Philosophy:
 
@@ -69,36 +55,16 @@ supply. With the addition of more types of armies, this ability can be added in 
 one could be available early in the game to an army, but it would not have as much added strength as that for the 
 army(ies) that have to wait longer to gain the ability.
 
-![img_1.png](img_1.png){ width=150% }
+![img_1.png](img_1.png)
 
 ## Trade-off Analysis:
 
-<table style="width: 100%; border-collapse: collapse;">
-  <tr>
-    <td style="width: 50%; vertical-align: top; padding-right: 10px;">
-      <h3>Sequence</h3>
-      <h4>Description</h4>
-      <p>This is basically an array. Each Item is stored individually and one must iterate through the whole list every 
-single time you have to add subtract or find and given item.</p> 
-<h4>Why is this a problem?</h4> 
-<p> As the army increases for each 
-player, there are ever more items to run through. Even with a sequence of sequences the whole proces is complicated and
-cumberson in relation to being able to just go to a bucket to find the type and then a bucket in the sub hash table to 
-get to the specific unit.</p>
-    </td>
-    <td style="width: 50%; vertical-align: top; padding-left: 10px;">
-      <h3>AVLTree</h3>
-      <h4>Description</h4>
-      <p>An AVLTree is a for of tree search structure and a very effective way to search through for numeric values, 
-especially when they are unique.</p> 
-<h4>Why is this a problem?</h4> 
-<p> As the army increases for each 
-player, there's continual additions to the tree. This is not quite so problematic though as there is still the 
-possibility of num type that subtrees but it is much easier to serialize and subtable as the tree best case scenario is 
-log(2) N.</p>
-    </td>
-  </tr>
-</table>
+| Sequence | AVLTree |
+|----------|---------|
+| **Description** | **Description** |
+| This is basically an array. Each Item is stored individually and one must iterate through the whole list every single time you have to add subtract or find and given item. | An AVLTree is a for of tree search structure and a very effective way to search through for numeric values, especially when they are unique.|
+| **Why is this a problem?** | **Why is this a problem?** |
+| As the army increases for each player, there are ever more items to run through. Even with a sequence of sequences the whole proces is complicated and cumberson in relation to being able to just go to a bucket to find the type and then a bucket in the sub hash table to get to the specific unit.| As the army increases for each player, there's continual additions to the tree. This is not quite so problematic though as there is still the possibility of num type that subtrees but it is much easier to serialize and subtable as the tree  best case scenario is log₂ N. |
 
 &nbsp;&nbsp;&nbsp;&nbsp; In summary while both are able to be used and traited, neither of them are quite so efficient 
 as a hash table that can be run as O(1). Further, it feels easier to think about the traits inside the hash table bucket
@@ -110,7 +76,31 @@ of object, remove it and then output the crafted item.
 
 ### AVLTree
 
-![AVLTreeProj6.jpg](AVLTreeProj6.jpg)
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{AVLTreeProj6.jpg}
+\caption{Alternative design sketch - AVLTree}
+\vspace{1em}
+\end{figure}
+
+
+&nbsp;&nbsp;&nbsp;&nbsp; The above flow chart is jus the start of what would need to be done to start out fleshing out 
+what would be necessary to complete a flow chart just to start getting to the units. Although log<sub>2</sub> N is not 
+long it is still far longer than O(1) that a hash table would require to find the location of the hashed unit type. <i>
+(See Below)</i>
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{img_3.png}
+\caption{Alternative design sketch - Hash Table}
+\vspace{1em}
+\end{figure}
+
+## Evaluation Plan
+
+&nbsp;&nbsp;&nbsp;&nbsp; I would test this format by first running through a debug program like we have through our projects. I would start with testing each variable through input validation and then standardized names to see what was returned and if it worked properly in the context of a hash table. After I would add the sub-variables to each general type, I would also verify that each of those returned the proper values. Next, I would test the hash table's hashtable for the individual values. one all those returned properly through try catch debugging, I would then link the tables properly with the secondary unit specific tables subservient to the primary tables.
+
 
 [1] S. Tapia-Fernández, D. García-García, and P. García-Hernandez, "Key Concepts, Weakness and Benchmark on Hash Table 
 Data Structures," Algorithms, vol. 15, no. 3, p. 100, Mar. 2022
