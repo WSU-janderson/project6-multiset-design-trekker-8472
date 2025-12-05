@@ -101,6 +101,9 @@ long it is still far longer than O(1) that a hash table would require to find th
 
 &nbsp;&nbsp;&nbsp;&nbsp; I would test this format by first running through a debug program like we have through our projects. I would start with testing each variable through input validation and then standardized names to see what was returned and if it worked properly in the context of a hash table. After I would add the sub-variables to each general type, I would also verify that each of those returned the proper values. Next, I would test the hash table's hashtable for the individual values. one all those returned properly through try catch debugging, I would then link the tables properly with the secondary unit specific tables subservient to the primary tables.
 
+## Conclusion
+
+&nbsp;&nbsp;&nbsp;&nbsp;
 
 [1] S. Tapia-Fernández, D. García-García, and P. García-Hernandez, "Key Concepts, Weakness and Benchmark on Hash Table 
 Data Structures," Algorithms, vol. 15, no. 3, p. 100, Mar. 2022
