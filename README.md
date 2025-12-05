@@ -27,6 +27,30 @@ of the unit being attacked. Also, the unit could already be dead when the damage
 one factor that will be O(N), that is the total army count (if counting the whole army each time.) this can be mitigated
 with a increment/decrement upon each unit creation and deletion.
 
+### Example Pseudo-code
+
+Function Initialize Army Tracker(listOfAllUnitTypes)
+
+&nbsp;&nbsp;&nbsp;&nbsp; armyTracker.tableUnits = new HashTable<unitGenID, unitTypeAndData>()\
+&nbsp;&nbsp;&nbsp;&nbsp; set unit count to 0\
+&nbsp;&nbsp;&nbsp;&nbsp; set supply to 0
+
+&nbsp;&nbsp;&nbsp;&nbsp; For every unitGenID in listOfAllUnitTypes\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new_unitTypeTable = new HashTable<unitID, unitObj>\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Add the unit Table to the Army Table
+
+Function Create Unit(unitGeneratorID, unitGeneratorLocation)
+
+&nbsp;&nbsp;&nbsp;&nbsp; Assign Serialized ID\
+&nbsp;&nbsp;&nbsp;&nbsp; Create UnitItem\
+&nbsp;&nbsp;&nbsp;&nbsp; Load Standard values\
+&nbsp;&nbsp;&nbsp;&nbsp; Set at map location (TBD by buildings and their Locations in the future)\
+&nbsp;&nbsp;&nbsp;&nbsp; Load the specifics (for example actual starting health, energy, shields {if any})
+
+&nbsp;&nbsp;&nbsp;&nbsp; Insert the Unit 
+
+&nbsp;&nbsp;&nbsp;&nbsp; return serialized ID
+
 ## Set Operations:
 
 &nbsp;&nbsp;&nbsp;&nbsp; There are several different set operations that may be of use. For example in many games one can creat specific subsets 
