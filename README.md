@@ -71,6 +71,47 @@ army(ies) that have to wait longer to gain the ability.
 
 ![img_1.png](img_1.png){ width=150% }
 
+## Trade-off Analysis:
+
+<table style="width: 100%; border-collapse: collapse;">
+  <tr>
+    <td style="width: 50%; vertical-align: top; padding-right: 10px;">
+      <h3>Sequence</h3>
+      <h4>Description</h4>
+      <p>This is basically an array. Each Item is stored individually and one must iterate through the whole list every 
+single time you have to add subtract or find and given item.</p> 
+<h4>Why is this a problem?</h4> 
+<p> As the army increases for each 
+player, there are ever more items to run through. Even with a sequence of sequences the whole proces is complicated and
+cumberson in relation to being able to just go to a bucket to find the type and then a bucket in the sub hash table to 
+get to the specific unit.</p>
+    </td>
+    <td style="width: 50%; vertical-align: top; padding-left: 10px;">
+      <h3>AVLTree</h3>
+      <h4>Description</h4>
+      <p>An AVLTree is a for of tree search structure and a very effective way to search through for numeric values, 
+especially when they are unique.</p> 
+<h4>Why is this a problem?</h4> 
+<p> As the army increases for each 
+player, there's continual additions to the tree. This is not quite so problematic though as there is still the 
+possibility of num type that subtrees but it is much easier to serialize and subtable as the tree best case scenario is 
+log(2) N.</p>
+    </td>
+  </tr>
+</table>
+
+&nbsp;&nbsp;&nbsp;&nbsp; In summary while both are able to be used and traited, neither of them are quite so efficient 
+as a hash table that can be run as O(1). Further, it feels easier to think about the traits inside the hash table bucket
+vis-à-vis the node structure or the list style of the sequence. Were the structure that was being worked on a crafting 
+from inventory type, I would choose the Sequence type as all one needs to do is find first occurrence of limited types 
+of object, remove it and then output the crafted item.
+
+## Alternative design sketch:
+
+### AVLTree
+
+![AVLTreeProj6.jpg](AVLTreeProj6.jpg)
+
 [1] S. Tapia-Fernández, D. García-García, and P. García-Hernandez, "Key Concepts, Weakness and Benchmark on Hash Table 
 Data Structures," Algorithms, vol. 15, no. 3, p. 100, Mar. 2022
 
