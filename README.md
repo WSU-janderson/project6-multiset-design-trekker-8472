@@ -53,6 +53,20 @@ Function Create Unit(unitGeneratorID, unitGeneratorLocation)
 
 &nbsp;&nbsp;&nbsp;&nbsp; return serialized ID
 
+Function interact Units(unitID, &otherUnitID) void function no return
+
+&nbsp;&nbsp;&nbsp;&nbsp; UnitID is attacker and &otherUnitID is defender\
+&nbsp;&nbsp;&nbsp;&nbsp; damage dealt from attacker inflicted upn defender\
+&nbsp;&nbsp;&nbsp;&nbsp; defender removes appropriate health and, if necessary, shields\
+&nbsp;&nbsp;&nbsp;&nbsp; if defender dies:\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; destroy unit and remove from map\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Attacker stops attacking
+
+&nbsp;&nbsp;&nbsp;&nbsp; if defender lives:\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wait designated time between attacks (attacks per second)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; take user command if given\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; attack again if no other command given
+
 ## Set Operations:
 
 &nbsp;&nbsp;&nbsp;&nbsp; There are several different set operations that may be of use. For example in many games one can creat specific subsets 
@@ -125,7 +139,7 @@ long it is still far longer than O(1) that a hash table would require to find th
 
 &nbsp;&nbsp;&nbsp;&nbsp; The last and worst option is the sequence of my counce. every action will be O(N). the illustration below demonstrates that every single time the bag is interacted with, that the interaction will have the potential to go through all items. the AVLTree has the potential for at least getting rid of half at each level. In an rts, having to iterate through the whole sequence will use too much time leading to more potential conflicts that need resolution; that slows the whole game.
 
-!\begin{figure}[H]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{img_4.png}
 \caption{Alternative design sketch - Sequence}
@@ -134,7 +148,7 @@ long it is still far longer than O(1) that a hash table would require to find th
 
 ## Evaluation Plan:
 
-&nbsp;&nbsp;&nbsp;&nbsp; I would test this format by first running through a debug program like we have through our projects. I would start with testing each variable through input validation and then standardized names to see what was returned and if it worked properly in the context of a hash table. After I would add the sub-variables to each general type, I would also verify that each of those returned the proper values. Next, I would test the hash table's hashtable for the individual values. one all those returned properly through try catch debugging, I would then link the tables properly with the secondary unit specific tables subservient to the primary tables.
+&nbsp;&nbsp;&nbsp;&nbsp; I would test this format by first running through a debug program like we have through our projects. I would start with testing each variable through input validation and then standardized names to see what was returned and if it worked properly in the context of a hash table. After I would add the sub-variables to each general type, I would also verify that each of those returned the proper values. Next, I would test the hash table's hashtable for the individual values. one all those returned properly through try catch debugging, I would then link the tables properly with the secondary unit specific tables subservient to the primary tables. Getting this correct at the early tests is crucial; once one creates larger and larger armies, the constant time run is critical to not causing lag. Test with more than double the max units allowed to verify it doesn't gum up the works or cause other unexpected errors.
 
 ## Conclusion:
 
