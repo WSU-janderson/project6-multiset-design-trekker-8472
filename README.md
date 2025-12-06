@@ -138,7 +138,7 @@ long it is still far longer than O(1) that a hash table would require to find th
 
 ## Conclusion:
 
-&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; Given the type of bag that is being created is an RTS Army (or armies) the best solution is to use a hash table. It has the fewest steps and iterations of the three types given. With real time being one of the primary requirements for interaction with the bag that is the paramount consideration. Other solutions are possible, but none so efficient and time-saving. 
 
 [1] S. Tapia-Fernández, D. García-García, and P. García-Hernandez, "Key Concepts, Weakness and Benchmark on Hash Table 
 Data Structures," Algorithms, vol. 15, no. 3, p. 100, Mar. 2022
