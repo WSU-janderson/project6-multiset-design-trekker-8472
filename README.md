@@ -5,6 +5,8 @@ header-includes:
 
 # Using Hash Tables to run (an) Army(ies) for Real Time Strategy
 
+#### By Robert Pohl CS-5100 Class Fall 2025
+
 ## Intro & Philosophy:
 
 &nbsp;&nbsp;&nbsp;&nbsp; Working with a data multiset to create the basis to store something viable for a game, I chose to work with 
@@ -103,7 +105,7 @@ of object, remove it and then output the crafted item.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{AVLTreeProj6.jpg}
+\includegraphics[width=0.6\textwidth]{AVLTreeProj6.jpg}
 \caption{Alternative design sketch - AVLTree}
 \vspace{1em}
 \end{figure}
@@ -116,16 +118,25 @@ long it is still far longer than O(1) that a hash table would require to find th
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\textwidth]{img_3.png}
+\includegraphics[width=0.5\textwidth]{img_3.png}
 \caption{Alternative design sketch - Hash Table}
 \vspace{1em}
 \end{figure}
 
-## Evaluation Plan
+&nbsp;&nbsp;&nbsp;&nbsp; The last and worst option is the sequence of my counce. every action will be O(N). the illustration below demonstrates that every single time the bag is interacted with, that the interaction will have the potential to go through all items. the AVLTree has the potential for at least getting rid of half at each level. In an rts, having to iterate through the whole sequence will use too much time leading to more potential conflicts that need resolution; that slows the whole game.
+
+!\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{img_4.png}
+\caption{Alternative design sketch - Sequence}
+\vspace{1em}
+\end{figure}
+
+## Evaluation Plan:
 
 &nbsp;&nbsp;&nbsp;&nbsp; I would test this format by first running through a debug program like we have through our projects. I would start with testing each variable through input validation and then standardized names to see what was returned and if it worked properly in the context of a hash table. After I would add the sub-variables to each general type, I would also verify that each of those returned the proper values. Next, I would test the hash table's hashtable for the individual values. one all those returned properly through try catch debugging, I would then link the tables properly with the secondary unit specific tables subservient to the primary tables.
 
-## Conclusion
+## Conclusion:
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 
